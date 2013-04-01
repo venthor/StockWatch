@@ -1,0 +1,18 @@
+﻿@model StockWatch.Models.Stocks.EditViewModel
+@{
+    ViewBag.Title = "Stocks";
+}
+@Html.RequireScript("/scripts/views/stocks.js")
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Stocks", FormMethod.Post, new { @class = "well" }))
+{
+    @Html.HiddenFor(x => x.Stock.Id)
+    @Html.LabelFor(x => x.Stock.Name)
+    @Html.EditorFor(x => x.Stock.Name)
+    @Html.ValidationMessageFor(x => x.Stock.Name)
+
+    <div class="pull-right">
+        <a href="/clients" class="btn">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+}

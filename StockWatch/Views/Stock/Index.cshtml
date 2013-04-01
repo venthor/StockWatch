@@ -1,0 +1,15 @@
+﻿@model StockWatch.Models.Stocks.ListViewModel
+
+@{
+    ViewBag.Title = "Stocks";
+    ViewBag.Controller = "stocks";
+    ViewBag.Action = "show";
+}
+
+@Html.RequireScript("/scripts/views/stocks.js")
+<div class="row">
+    <div class="span12">
+        <h2>Stocks</h2>
+        @{Html.RenderPartial("_List", Model.Stocks);}
+    </div>
+</div>
